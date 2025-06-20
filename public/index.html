@@ -1,31 +1,250 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
+      <title>Create Payment - Grave Sites Management</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        rel="stylesheet"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap"
+        rel="stylesheet"
+      />
+      <style>
+        body {
+          font-family: "Inter", sans-serif;
+        }
+      </style>
+    </head>
+    <body class="bg-[#f3f6f6] min-h-screen flex flex-col">
+      <!-- Header -->
+      <header
+        class="bg-[#2a2f33] text-white flex items-center justify-between px-6 h-14"
+      >
+        <div class="flex items-center space-x-3">
+          <img
+            alt="Grave Sites Management logo, green background with white icon"
+            class="w-6 h-6"
+            height="24"
+            src="https://storage.googleapis.com/a1aa/image/74030338-4d6f-48e6-bff2-5596a12a7f55.jpg"
+            width="24"
+          />
+          <span class="font-semibold text-sm select-none">
+            Grave Sites Management
+          </span>
+        </div>
+        <nav class="flex items-center space-x-6 text-sm">
+          <div class="relative group">
+            <button
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="flex items-center space-x-1 bg-[#3a3f44] px-3 py-1 rounded text-white text-sm font-semibold"
+            >
+              <span> Maintain </span>
+              <i class="fas fa-caret-down text-xs"> </i>
+            </button>
+          </div>
+          <button class="flex items-center space-x-1 hover:text-gray-300">
+            <i class="fas fa-rupee-sign"> </i>
+            <span> Payments </span>
+          </button>
+          <button class="flex items-center space-x-1 hover:text-gray-300">
+            <i class="fas fa-file-alt"> </i>
+            <span> Reports </span>
+          </button>
+          <button aria-label="Search" class="hover:text-gray-300">
+            <i class="fas fa-search"> </i>
+          </button>
+          <button aria-label="Settings" class="hover:text-gray-300">
+            <i class="fas fa-cog"> </i>
+          </button>
+          <button aria-label="Help" class="hover:text-gray-300">
+            <i class="fas fa-question-circle"> </i>
+          </button>
+          <div
+            class="flex items-center space-x-2 cursor-pointer group relative"
+          >
+            <div
+              class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-semibold select-none"
+            >
+              JS
+            </div>
+            <div
+              class="text-left text-xs leading-4 hidden group-hover:block absolute top-full right-0 mt-1 bg-[#2a2f33] px-3 py-1 rounded shadow-lg whitespace-nowrap"
+            >
+              <div class="font-semibold">John Snow</div>
+              <div class="text-gray-400">Municipality Officer</div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- Main content -->
+      <main class="flex-grow flex justify-start items-start px-6 py-10">
+        <div class="max-w-7xl w-full flex flex-col md:flex-row md:space-x-10">
+          <!-- Left panel -->
+          <section class="flex-shrink-0 w-full md:w-64 text-[#1f3d2f]">
+            <h1 class="text-xl font-extrabold mb-6 select-none">
+              Create Payment
+            </h1>
+            <div class="space-y-6 text-sm font-normal">
+              <div class="flex items-center space-x-2">
+                <i class="fas fa-lock text-gray-600"> </i>
+                <div>
+                  <div class="text-gray-500 font-semibold select-text">
+                    Grave Site
+                  </div>
+                  <div class="select-text">01-1001-05.0</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i class="fas fa-user text-gray-600"> </i>
+                <div>
+                  <div class="text-gray-500 font-semibold select-text">
+                    Owner
+                  </div>
+                  <div class="select-text">Lorraine &amp; Russ Stewart</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i class="fas fa-archive text-gray-600"> </i>
+                <div>
+                  <div class="text-gray-500 font-semibold select-text">
+                    Person Buried
+                  </div>
+                  <div class="select-text">Edgar Steward</div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Right panel -->
+          <section
+            class="bg-white rounded-lg shadow-lg p-6 w-full max-w-2xl mt-8 md:mt-0"
+            style="min-width: 360px"
+          >
+            <h2 class="text-gray-800 font-semibold mb-6 select-none">
+              Payment Details
+            </h2>
+            <form class="space-y-4 text-xs text-gray-700">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
+                <div class="flex flex-col">
+                  <label class="mb-1 select-none" for="receipt">
+                    Receipt Number
+                  </label>
+                  <input
+                    class="border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-green-400"
+                    id="receipt"
+                    type="text"
+                    value="1234"
+                  />
+                </div>
+                <div class="flex flex-col">
+                  <label class="mb-1 select-none" for="transaction">
+                    Transaction ID
+                  </label>
+                  <input
+                    class="border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-green-400"
+                    id="transaction"
+                    type="text"
+                  />
+                </div>
+                <div class="flex flex-col">
+                  <label class="mb-1 select-none" for="amount"> Amount </label>
+                  <input
+                    class="border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-green-400"
+                    id="amount"
+                    type="text"
+                  />
+                </div>
+                <div class="flex flex-col relative">
+                  <label class="mb-1 select-none" for="datepaid">
+                    Date Paid
+                  </label>
+                  <input
+                    class="border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-green-400"
+                    id="datepaid"
+                    type="date"
+                    value="2023-01-28"
+                  />
+                  <i
+                    aria-hidden="true"
+                    class="fas fa-calendar-alt absolute right-2 top-8 text-gray-400 pointer-events-none"
+                  >
+                  </i>
+                </div>
+                <div class="flex flex-col">
+                  <label class="mb-1 select-none" for="paymenttype">
+                    Payment Type
+                  </label>
+                  <select
+                    class="border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-green-400"
+                    id="paymenttype"
+                  >
+                    <option>Select</option>
+                  </select>
+                </div>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
+                <div class="flex flex-col">
+                  <label class="mb-1 select-none" for="payor"> Payor </label>
+                  <input
+                    class="border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-green-400"
+                    id="payor"
+                    type="text"
+                    value="Lorraine &amp; Russ Steward"
+                  />
+                </div>
+              </div>
+              <div class="flex flex-col mt-2">
+                <label class="mb-1 select-none" for="description">
+                  Description
+                </label>
+                <textarea
+                  class="border border-gray-300 rounded px-2 py-1 text-xs resize-none focus:outline-none focus:ring-1 focus:ring-green-400"
+                  id="description"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div class="flex items-center space-x-3 mt-6">
+                <button
+                  class="bg-green-300 text-white text-xs font-semibold rounded-full px-4 py-1 select-none hover:bg-green-400 transition"
+                  type="submit"
+                >
+                  Submit
+                </button>
+                <button
+                  class="bg-gray-600 text-white text-xs font-semibold rounded-full px-4 py-1 select-none hover:bg-gray-700 transition"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <div
+                  class="flex items-center text-gray-400 text-xs select-none ml-auto cursor-default"
+                >
+                  <i class="fas fa-plus-circle mr-1"> </i>
+                  Add another payment
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </main>
+      <!-- Footer -->
+      <footer
+        class="bg-[#66707a] text-white text-xs flex justify-between items-center px-6 h-12 select-none"
+      >
+        <div>© 2023 Company</div>
+        <nav class="flex space-x-6">
+          <a class="hover:underline" href="#"> About </a>
+          <a class="hover:underline" href="#"> Terms of Use </a>
+          <a class="hover:underline" href="#"> Contact </a>
+        </nav>
+      </footer>
+    </body>
+  </html>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
